@@ -20,8 +20,8 @@ const asyncComponents = {
   'standard-question': defineAsyncComponent(() => import('./standard-question.vue')),
   'multi-select': defineAsyncComponent(() => import('./multi-select.vue')),
 }
-const componentToRender = computed(() => {
-  return quizData.value.questions[counterStore.count].type
+const componentToRender = computed<keyof typeof asyncComponents>(() => {
+  return quizData.value.questions[counterStore.count].type as keyof typeof asyncComponents
 })
 const currentComponent = computed(() => {
   return asyncComponents[componentToRender.value]
@@ -57,7 +57,7 @@ onMounted(() => {
         @submit="submitHandler"
       />
     </KeepAlive>
-    <EmailPrompt
+    <!-- <EmailPrompt
       @userDataSubmit="userDataSubmitHandler"
       v-if="quizCompleted && !userDataSubmitted"
     />
@@ -66,8 +66,8 @@ onMounted(() => {
       :quizData
       :userAnswers="answersStore.answer"
     >
-    </EndScreenCustom>
-    <EndScreen v-if="userDataSubmitted && !quizData.endscreen.custom" />
+    </EndScreenCustom> -->
+    <!-- <EndScreen v-if="userDataSubmitted && !quizData.endscreen.custom" /> -->
   </div>
 </template>
 
