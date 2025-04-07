@@ -1,0 +1,37 @@
+{
+  "type": "rapid-fire-quiz",
+  "startscreen": {
+    "introtext": "Find your perfect skincare routine in 60 seconds.",
+    "cta_text": "Take Quiz",
+    "background_img": "startscreen-skincare.jpg"
+  },
+  "endscreen": {
+    "custom": true,
+    "header": "Your Custom Skincare Match",
+    "text": "We’ve matched you with a personalized routine based on your answers.",
+    "ctaurl": "https://yourstore.com/collections/skincare-bundles",
+    "cta_text": "See My Recommendations"
+  },
+  "questions": [
+    {
+      "type": "standard-question",
+      "question": "What’s your skin type?",
+      "options": ["Oily", "Dry", "Combination", "Sensitive"]
+    },
+    {
+      "type": "standard-question",
+      "question": "What’s your #1 skin concern?",
+      "options": ["Acne", "Wrinkles", "Dark spots", "Redness"]
+    },
+    {
+      "type": "multi-select",
+      "question": "What’s important to you in skincare?",
+      "options": ["Fragrance-free", "Cruelty-free", "Anti-aging", "All-natural ingredients"]
+    },
+    {
+      "type": "standard-question",
+      "question": "How often do you use skincare products?",
+      "options": ["Daily", "Occasionally", "Never (but I'm ready to start!)"]
+    }
+  ]
+}
