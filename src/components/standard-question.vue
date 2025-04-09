@@ -39,7 +39,7 @@ interface Answer {
           v-for="(option, index) in props.quizData?.options"
           :key="index"
           :for="option"
-          class="flex justify-start gap-x-4 sm:min-w-full lg:min-w-44 bg-accent px-4 py-2 rounded"
+          class="flex justify-start gap-x-4 sm:min-w-full bg-primary text-secondary lg:min-w-44 px-4 py-3 rounded hover:bg-amber-500 cursor-pointer"
           :class="{ [`bg-amber-500`]: isSelected(index) }"
         >
           <RadioGroupItem
