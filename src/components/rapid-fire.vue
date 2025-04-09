@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import MultiSelect from './multi-select.vue'
-import StandardQuestion from './standard-question.vue'
+// import MultiSelect from './multi-select.vue'
+// import StandardQuestion from './standard-question.vue'
 import StartScreen from './start-screen.vue'
-// import EndScreen from './end-screen.vue'
-// import EndScreenCustom from './end-screen-custom.vue'
-// import EmailPrompt from './email-prompt.vue'
+import EndScreen from './end-screen.vue'
+import EndScreenCustom from './end-screen-custom.vue'
+import EmailPrompt from './email-prompt.vue'
 import { useCounterStore } from '@/stores/counter'
 import { useAnswersStore } from '@/stores/answers'
 import { storeToRefs } from 'pinia'
@@ -57,7 +57,7 @@ onMounted(() => {
         @submit="submitHandler"
       />
     </KeepAlive>
-    <!-- <EmailPrompt
+    <EmailPrompt
       @userDataSubmit="userDataSubmitHandler"
       v-if="quizCompleted && !userDataSubmitted"
     />
@@ -66,8 +66,8 @@ onMounted(() => {
       :quizData
       :userAnswers="answersStore.answer"
     >
-    </EndScreenCustom> -->
-    <!-- <EndScreen v-if="userDataSubmitted && !quizData.endscreen.custom" /> -->
+    </EndScreenCustom>
+    <EndScreen v-if="userDataSubmitted && !quizData.endscreen.custom" />
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useQuizDataStore } from '@/stores/quizdata'
-import nyc from '@/assets/img/nyc.jpg'
+import { useQuizDataStore } from '../stores/quizdata'
+import nyc from '../assets/img/startscreen-bg.jpeg'
 const quizDataStore = useQuizDataStore()
 const { quizData } = quizDataStore
 const backgroundImg = nyc

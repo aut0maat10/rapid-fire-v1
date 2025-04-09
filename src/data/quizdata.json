@@ -6,7 +6,7 @@
     "background_img": "startscreen-skincare.jpg"
   },
   "endscreen": {
-    "custom": true,
+    "custom": false,
     "header": "Your Custom Skincare Match",
     "text": "We’ve matched you with a personalized routine based on your answers.",
     "ctaurl": "https://yourstore.com/collections/skincare-bundles",
