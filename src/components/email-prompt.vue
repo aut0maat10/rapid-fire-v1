@@ -14,6 +14,7 @@ import {
 } from './ui/form'
 import { Input } from './ui/input'
 
+const emit = defineEmits(['userDataSubmit'])
 const formSchema = toTypedSchema(
   z.object({
     username: z.string().min(2).max(50),
@@ -26,6 +27,7 @@ const form = useForm({
 
 const onSubmit = form.handleSubmit((values) => {
   console.log('Form submitted!', values)
+  emit('userDataSubmit', values)
 })
 </script>
 

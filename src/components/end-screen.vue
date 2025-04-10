@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useQuizDataStore } from '../stores/quizdata'
 import nyc from '../assets/img/startscreen-bg.jpeg'
+import { Button } from './ui/button'
 const quizDataStore = useQuizDataStore()
 const { quizData } = quizDataStore
 const backgroundImg = nyc
