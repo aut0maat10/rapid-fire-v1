@@ -42,7 +42,7 @@ const onSubmit = () => emit('submit', payload.value)
     <h2 class="text-5xl font-bold text-center text-muted-foreground">
       {{ props.quizData?.question }}
     </h2>
-    <p class="self-center text-muted-foreground">Select all that apply</p>
+    <p class="self-center text-muted-foreground italic text-lg">Select all that apply</p>
     <div class="options-wrapper flex flex-col flex-wrap justify-center content-center gap-y-4 my-8">
       <Label
         v-for="(option, index) in props.quizData?.options"
