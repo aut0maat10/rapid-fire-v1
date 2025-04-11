@@ -46,7 +46,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="container">
+  <div class="w-full h-full">
     <StartScreen v-if="!quizStarted" @quizStarted="startHandler" />
     <KeepAlive>
       <component

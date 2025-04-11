@@ -4,6 +4,7 @@ import type { Ref } from 'vue'
 import { Button } from './ui/button'
 import { Label } from './ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import backgroundImg from '@/assets/img/startscreen-bg.jpeg'
 const props = defineProps({
   quizData: Object,
 })
@@ -29,8 +30,11 @@ interface Answer {
 </script>
 
 <template>
-  <div class="base-component flex flex-col flex-wrap justify-center content-center gap-y-4">
-    <h2 class="text-5xl font-bold text-center">
+  <div
+    class="base-component flex flex-col flex-wrap justify-center items-center h-full content-center gap-y-4 bg-cover"
+    :style="{ backgroundImage: `url(${backgroundImg})` }"
+  >
+    <h2 class="text-5xl font-bold text-center text-muted-foreground">
       {{ props.quizData?.question }}
     </h2>
     <div class="options-wrapper flex flex-col flex-wrap justify-center content-center gap-y-4 my-8">
@@ -39,8 +43,8 @@ interface Answer {
           v-for="(option, index) in props.quizData?.options"
           :key="index"
           :for="option"
-          class="flex justify-start gap-x-4 sm:min-w-full bg-primary text-secondary lg:min-w-44 px-4 py-3 rounded hover:bg-amber-500 cursor-pointer"
-          :class="{ [`bg-amber-500`]: isSelected(index) }"
+          class="flex justify-start gap-x-4 sm:min-w-full bg-primary lg:min-w-44 px-4 py-3 rounded hover:bg-[#E0BBE4] cursor-pointer"
+          :class="{ [`bg-[#E0BBE4]`]: isSelected(index) }"
         >
           <RadioGroupItem
             class=""
@@ -51,11 +55,11 @@ interface Answer {
               question: props.quizData?.question,
             }"
           />
-          <span>{{ option }}</span>
+          <span class="text-muted-foreground">{{ option }}</span>
         </Label>
       </RadioGroup>
     </div>
-    <Button :disabled="!canSubmit" @click="onSubmit" class="btn btn-secondary self-center">
+    <Button :disabled="!canSubmit" @click="onSubmit" class="self-center text-muted-foreground">
       Next Question
     </Button>
   </div>

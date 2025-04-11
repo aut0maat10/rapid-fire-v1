@@ -10,6 +10,7 @@ type StartScreen = {
   cta_text: string
   introtext: string
   background_img: string
+  layout: string
 }
 
 type EndScreen = {

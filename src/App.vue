@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import RapidFire from './components/rapid-fire.vue'
+import Header from './components/header.vue'
 </script>
 
 <template>
   <header>
-    <div class="wrapper">header</div>
+    <Header />
   </header>
 
-  <main>
+  <main class="h-full">
     <RapidFire />
   </main>
 </template>

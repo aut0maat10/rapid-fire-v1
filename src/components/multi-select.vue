@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import { Button } from './ui/button'
 import { Checkbox } from './ui/checkbox'
 import { Label } from './ui/label'
-
+import backgroundImg from '@/assets/img/startscreen-bg.jpeg'
 const props = defineProps({
   quizData: Object,
 })
@@ -35,11 +35,14 @@ const onSubmit = () => emit('submit', payload.value)
 </script>
 
 <template>
-  <div class="base-component flex flex-col flex-wrap justify-center content-center gap-y-4">
-    <h2 class="text-5xl font-bold text-center">
+  <div
+    class="base-component flex flex-col flex-wrap justify-center content-center gap-y-4 bg-cover h-full"
+    :style="{ backgroundImage: `url(${backgroundImg})` }"
+  >
+    <h2 class="text-5xl font-bold text-center text-muted-foreground">
       {{ props.quizData?.question }}
     </h2>
-    <p class="self-center">Select all that apply</p>
+    <p class="self-center text-muted-foreground">Select all that apply</p>
     <div class="options-wrapper flex flex-col flex-wrap justify-center content-center gap-y-4 my-8">
       <Label
         v-for="(option, index) in props.quizData?.options"
@@ -49,15 +52,22 @@ const onSubmit = () => emit('submit', payload.value)
         <Checkbox v-model="answers[index]" :id="option" class="hidden" />
         <Button
           as="span"
-          :class="{ 'bg-amber-500 text-white': answers[index], 'bg-primary': !answers[index] }"
-          class="w-full text-left rounded hover:bg-amber-500"
+          :class="{ 'bg-[#E0BBE4]': answers[index], 'bg-primary': !answers[index] }"
+          class="w-full text-left rounded hover:bg-[#E0BBE4] cursor-pointer text-muted-foreground"
         >
           {{ option }}
         </Button>
       </Label>
     </div>
-    <Button :disabled="!canSubmit" @click="onSubmit" class="self-center"> Next Question </Button>
+    <Button :disabled="!canSubmit" @click="onSubmit" class="self-center text-muted-foreground">
+      Next Question
+    </Button>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+/* .base-component {
+  background-position: 50% 45%;
+  box-shadow: inset 0 0 0 2000px rgba(22, 21, 22, 0.3);
+} */
+</style>

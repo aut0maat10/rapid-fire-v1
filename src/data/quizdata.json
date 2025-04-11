@@ -3,7 +3,8 @@
   "startscreen": {
     "introtext": "Find your perfect skincare routine in 60 seconds.",
     "cta_text": "Take Quiz",
-    "background_img": "startscreen-skincare.jpg"
+    "background_img": "startscreen-skincare.jpg",
+    "layout": "background-image"
   },
   "endscreen": {
     "custom": false,
